@@ -13,7 +13,9 @@ def doki(from)
 
   json = {
     from: from,
-    message: "どきどきしてる？"
+    timestamp: Time.now.strftime("%s").to_i,
+    message: "どきどきしてる？",
+    timestring: Time.now,
   }
   resp = sns.publish(
     target_arn: ARN,
